@@ -17,10 +17,10 @@ public class RandomNumberGeneratorTest {
 		String randomNumber = randomNumberGenerator.generate(gameOption);
 
 		assertThat(randomNumber.length()).isEqualTo(3);
-		assertThat(isUnique(randomNumber)).isTrue();
+		assertThat(containsDuplicatedNumber(randomNumber)).isTrue();
 	}
 
-	private boolean isUnique(String randomNumber) {
+	private boolean containsDuplicatedNumber(String randomNumber) {
 		String uniqueNumber = randomNumber.chars().distinct()
 				.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
 				.toString();
