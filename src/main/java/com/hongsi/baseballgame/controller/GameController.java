@@ -1,6 +1,7 @@
 package com.hongsi.baseballgame.controller;
 
 import com.hongsi.baseballgame.model.GameOption;
+import com.hongsi.baseballgame.model.Result;
 
 public class GameController {
 
@@ -8,6 +9,7 @@ public class GameController {
 	private final RandomNumberGenerator randomNumberGenerator;
 
 	private GameOption gameOption;
+	private ResultController resultController;
 
 	public GameController() {
 		inputController = new InputController();
@@ -16,7 +18,16 @@ public class GameController {
 
 	public void init() {
 		gameOption = new GameOption(inputController.inputRandomNumberSize());
-		String randomNumber = randomNumberGenerator.generate(gameOption);
-		System.out.println(randomNumber);
+		resultController = new ResultController(randomNumberGenerator.generate(gameOption));
+
+		start();
+	}
+
+	private void start() {
+		do {
+			resultController.confirm(inputController.guessNumber(gameOption));
+		} while(!resultController.isAllMatch(gameOption.getRandomNumberSize()));
+
+		resultController.printGameResult();
 	}
 }

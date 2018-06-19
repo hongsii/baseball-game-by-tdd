@@ -1,5 +1,6 @@
 package com.hongsi.baseballgame.controller;
 
+import com.hongsi.baseballgame.model.GameOption;
 import java.util.Scanner;
 
 import com.hongsi.baseballgame.validator.UserInputValidator;
@@ -19,16 +20,20 @@ public class InputController {
 	}
 
 	public int inputRandomNumberSize() {
-		String randomNumberSize = "";
+		String randomNumberSize;
 		do {
-			printInputMessageForRandomNumberSize();
+			System.out.print("랜덤 숫자 개수 (" + UserInputValidator.MIN_RANDOM_NUMBER_SIZE + "-" + UserInputValidator.MAX_RANDOM_NUMBER_SIZE + ") : ");
 			randomNumberSize = scanner.next();
 		} while(!userInputValidator.isValidRandomNumberSize(randomNumberSize));
 		return Integer.parseInt(randomNumberSize);
 	}
 
-
-	private void printInputMessageForRandomNumberSize() {
-		System.out.print("랜덤 숫자 개수 (" + UserInputValidator.MIN_RANDOM_NUMBER_SIZE + "-" + UserInputValidator.MAX_RANDOM_NUMBER_SIZE + ") : ");
+	public String guessNumber(GameOption gameOption) {
+		String guessNumber;
+		do {
+			System.out.print("번호 입력 : ");
+			guessNumber = scanner.next();
+		} while(!userInputValidator.isValidGuessNumber(gameOption.getRandomNumberSize(), guessNumber));
+		return guessNumber;
 	}
 }

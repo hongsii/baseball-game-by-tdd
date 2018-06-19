@@ -2,7 +2,7 @@ package com.hongsi.baseballgame.model;
 
 public class GameOption {
 	
-	private int randomNumberSize;
+	private final int randomNumberSize;
 
 	public GameOption(int randomNumberSize) {
 		this.randomNumberSize = randomNumberSize;
