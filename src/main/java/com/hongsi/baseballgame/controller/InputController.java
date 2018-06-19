@@ -1,6 +1,5 @@
 package com.hongsi.baseballgame.controller;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 import com.hongsi.baseballgame.validator.UserInputValidator;
@@ -19,22 +18,6 @@ public class InputController {
 		this.userInputValidator = new UserInputValidator();
 	}
 
-//	public int inputRandomNumberSize() {
-//		int randomNumberSize;
-//		boolean isNumber = false;
-//		do {
-//			printInputMessageForRandomNumberSize();
-//			isNumber = scanner.hasNextInt();
-//			if(!isNumber) {
-//				System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä!");
-//				scanner.next();
-//				printInputMessageForRandomNumberSize();
-//			}
-//			randomNumberSize = scanner.nextInt();
-//		} while(!userInputValidator.isValidRandomNumberSize(randomNumberSize));
-//		return randomNumberSize;
-//	}
-	
 	public int inputRandomNumberSize() {
 		String randomNumberSize = "";
 		do {
@@ -46,9 +29,6 @@ public class InputController {
 
 
 	private void printInputMessageForRandomNumberSize() {
-		System.out.print("·£´ı ¼ıÀÚ °³¼ö (" + UserInputValidator.MIN_RANDOM_NUMBER_SIZE + "-" + UserInputValidator.MAX_RANDOM_NUMBER_SIZE + ") : ");
+		System.out.print("ëœë¤ ìˆ«ì ê°œìˆ˜ (" + UserInputValidator.MIN_RANDOM_NUMBER_SIZE + "-" + UserInputValidator.MAX_RANDOM_NUMBER_SIZE + ") : ");
 	}
-	
-	
-//	private boolean isValid
 }

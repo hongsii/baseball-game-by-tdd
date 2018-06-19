@@ -9,7 +9,7 @@ public class UserInputValidator {
 	
 	public boolean isValidRandomNumberSize(String input) {
 		if(!input.matches(RANDOM_NUMBER_SIZE_PATTERN)) {
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº ÀÔ·ÂÀÔ´Ï´Ù.");
+			System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ì…ë ¥ì…ë‹ˆë‹¤!");
 			return false;
 		}
 		return true;

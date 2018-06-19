@@ -24,7 +24,7 @@ public class UserInputValidatorTest {
 	public void isInvalidRandomNumberSize() throws Exception {
 		assertInvalidRandomNumberSize("2");
 		assertInvalidRandomNumberSize("6");
-		assertInvalidRandomNumberSize("¹®ÀÚ°¡ µé¾î°¡¸é ¾ÈµÅ¿ä");
+		assertInvalidRandomNumberSize("ë¬¸ìë¥¼ ì…ë ¥í•˜ë©´ ì•ˆë¼ìš”");
 	}
 
 	private void assertInvalidRandomNumberSize(String randomNumberSize) {
